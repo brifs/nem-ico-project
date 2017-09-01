@@ -1,0 +1,23 @@
+{
+  "name": "nem-ico-example",
+  "version": "0.1.0",
+  "description": ":warning: This project is a use case example, we do not recommend use it in production environments :warning:",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aleixmorgadas/nem-ico-example.git"
+  },
+  "keywords": [
+    "nem",
+    "ico"
+  ],
+  "author": "Aleix Morgadas <aleix602@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/aleixmorgadas/nem-ico-example/issues"
+  },
+  "homepage": "https://github.com/aleixmorgadas/nem-ico-example#readme"
+}
