@@ -23,5 +23,17 @@
   "dependencies": {
     "nem-library": "^0.8.2",
     "rxjs": "^5.4.3"
+  },
+  "devDependencies": {
+    "@types/chai": "^4.0.2",
+    "@types/mocha": "^2.2.41",
+    "@types/nock": "^8.2.1",
+    "chai": "^4.1.1",
+    "mocha": "^3.5.0",
+    "mocha-typescript": "^1.1.7",
+    "nock": "^9.0.14",
+    "ts-node": "^3.3.0",
+    "typedoc": "^0.8.0",
+    "typescript": "^2.5.1"
   }
 }
