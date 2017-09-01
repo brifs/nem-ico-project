@@ -4,7 +4,11 @@
   "description": ":warning: This project is a use case example, we do not recommend use it in production environments :warning:",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "rm -rf dist && tsc",
+    "pretest": "npm run build",
+    "test:unit": "mocha --ui bdd --recursive ./dist/test",
+    "test": "npm run test:unit",
+    "application": "node ./dist/src/index.js"
   },
   "repository": {
     "type": "git",
