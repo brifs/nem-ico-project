@@ -50,4 +50,4 @@ The project will mainly be developed with the next technologies:
 [license]: https://github.com/aleixmorgadas/nem-ico-example/blob/master/LICENSE
 [code-of-conduct]: https://github.com/aleixmorgadas/nem-ico-example/blob/master/CODE_OF_CONDUCT.md
 [issues]: https://github.com/aleixmorgadas/nem-ico-example/issues
-[nemprojects]: https:/t.me/nemprojects
+[nemprojects]: https://t.me/nemprojects
