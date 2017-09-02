@@ -6,9 +6,11 @@
   "scripts": {
     "build": "rm -rf dist && tsc",
     "pretest": "npm run build",
-    "test:unit": "mocha --ui bdd --recursive ./dist/test",
-    "test": "npm run test:unit",
-    "application": "node ./dist/src/index.js"
+    "test:payoutsystem": "mocha --ui bdd --recursive ./dist/payoutsystem/test",
+    "test:application": "mocha --ui bdd --recursive ./dist/application/test",
+    "test": "npm run test:payoutsystem && npm run test:application",
+    "application": "node ./dist/application/src/index.js",
+    "payoutsystem": "node ./dist/payoutsystem/src/index.js"
   },
   "repository": {
     "type": "git",
