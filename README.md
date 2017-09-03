@@ -38,6 +38,7 @@ The project will mainly be developed with the next technologies:
 | Username | Role |
 | --- | --- |
 | [aleixmorgadas](https://github.com/aleixmorgadas) | Project lead |
+| [evias](https://github.com/evias) | Developer |
 
 ## License & Code of Conduct
 
