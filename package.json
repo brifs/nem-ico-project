@@ -10,7 +10,8 @@
     "test:application": "mocha --ui bdd --recursive ./dist/application/test",
     "test": "npm run test:payoutsystem && npm run test:application",
     "application": "node ./dist/application/src/index.js",
-    "payoutsystem": "node ./dist/payoutsystem/src/index.js"
+    "payoutsystem": "node ./dist/payoutsystem/src/index.js",
+    "test:cov": "nyc --reporter=lcov --reporter=text-lcov npm run test && nyc report --reporter=lcov"
   },
   "repository": {
     "type": "git",
@@ -41,5 +42,10 @@
     "ts-node": "^3.3.0",
     "typedoc": "^0.8.0",
     "typescript": "^2.5.1"
+  },
+  "nyc": {
+    "exclude": [
+      "**/*.spec.js"
+    ]
   }
 }
