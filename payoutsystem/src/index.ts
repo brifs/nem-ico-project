@@ -5,6 +5,7 @@ import { WowTestMosaic } from "./models/WowTestMosaic";
 import {Observable} from "rxjs";
 import {IsOrContainsTransferTransaction} from "./functions/IsOrContainsTransferTransaction";
 import {ExtractTransferTransaction} from "./functions/ExtractTransferTransaction";
+import {ICOPayment} from "./functions/ICOPayment";
 
 NEMLibrary.bootstrap(NetworkTypes.TEST_NET);
 declare let process: any;
@@ -22,15 +23,7 @@ new ConfirmedTransactionListener().given(account.address)
     .filter(IsOrContainsTransferTransaction)
     .map(ExtractTransferTransaction)
     .filter((_) => _!.signer!.address.plain() != account.address.plain())
-    .map((_: TransferTransaction) => {
-        const amount = Math.min(_.amount / 1000000, 10);
-        return TransferTransaction.createWithMosaics(
-            TimeWindow.createWithDeadline(),
-            _.signer!.address,
-            [new WowTestMosaic(amount)],
-            PlainMessage.create("Thanks to send some XEM Test! https://github.com/aleixmorgadas/nem-ico-example")
-        )
-    })
+    .map(ICOPayment)
     .map((_) => account.signTransaction(_))
     .flatMap((_) => transactionHttp.announceTransaction(_))
     .subscribe((_) => {
