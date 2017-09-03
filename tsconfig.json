@@ -62,6 +62,8 @@
     "dist"
   ],
   "include": [
+    "payoutsystem/src/**/*.ts",
+    "application/src/**/*.ts",
     "payoutsystem/test/**/*.spec.ts",
     "application/test/**/*.spec.ts"
   ]

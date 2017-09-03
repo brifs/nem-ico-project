@@ -3,6 +3,8 @@ import {
 } from "nem-library";
 import { WowTestMosaic } from "./models/WowTestMosaic";
 import {Observable} from "rxjs";
+import {IsOrContainsTransferTransaction} from "./functions/IsOrContainsTransferTransaction";
+import {ExtractTransferTransaction} from "./functions/ExtractTransferTransaction";
 
 NEMLibrary.bootstrap(NetworkTypes.TEST_NET);
 declare let process: any;
@@ -17,18 +19,8 @@ new ConfirmedTransactionListener().given(account.address)
         console.log("\nCONFIRMED TRANSACTION", _);
         return _;
     })
-    .filter((_) => {
-        var isTransactionInsideMultisig = false;
-        if (_.type == TransactionTypes.MULTISIG) {
-            isTransactionInsideMultisig = (_ as MultisigTransaction).otherTransaction.type == TransactionTypes.TRANSFER;
-        }
-        return _.type == TransactionTypes.TRANSFER || isTransactionInsideMultisig;
-    })
-    .map((_) => {
-        if (_.type == TransactionTypes.TRANSFER) return _;
-        else if (_.type == TransactionTypes.MULTISIG) return (_ as MultisigTransaction).otherTransaction;
-        Observable.throw("It is not a TransferTransaction")
-    })
+    .filter(IsOrContainsTransferTransaction)
+    .map(ExtractTransferTransaction)
     .filter((_) => _!.signer!.address.plain() != account.address.plain())
     .map((_: TransferTransaction) => {
         const amount = Math.min(_.amount / 1000000, 10);
