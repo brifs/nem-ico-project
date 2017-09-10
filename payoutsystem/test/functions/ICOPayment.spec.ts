@@ -25,7 +25,7 @@ describe("ICOPayment", () => {
        );
        transaction.signer = PublicAccount.createWithPublicKey("0414fe7647ec008e533aac98a4bf1c5fbf1d236c75b81fdadf1f5d1042fdd2ff");
        let payoutTransaction = ICOPayment(transaction);
-       expect(payoutTransaction.mosaics![0].quantity).to.be.equal(2);
+       expect(payoutTransaction.mosaics()[0].quantity).to.be.equal(2);
     });
 
 
@@ -39,6 +39,6 @@ describe("ICOPayment", () => {
         );
         transaction.signer = PublicAccount.createWithPublicKey("0414fe7647ec008e533aac98a4bf1c5fbf1d236c75b81fdadf1f5d1042fdd2ff");
         let payoutTransaction = ICOPayment(transaction);
-        expect(payoutTransaction.mosaics![0].quantity).to.be.equal(10);
+        expect(payoutTransaction.mosaics()[0].quantity).to.be.equal(10);
     });
 });

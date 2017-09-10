@@ -55,7 +55,7 @@
   },
   "files": [
     "payoutsystem/src/index.ts",
-    "application/src/index.ts"
+    "application/src/server.ts"
   ],
   "exclude": [
     "node_modules",

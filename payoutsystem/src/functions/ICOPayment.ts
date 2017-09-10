@@ -4,7 +4,7 @@ import {WowTestMosaic} from "../models/WowTestMosaic";
 import {PlainMessage} from "nem-library/dist/src/models/transaction/PlainMessage";
 
 export function ICOPayment(investorPayment: TransferTransaction): TransferTransaction {
-    const amount = Math.min(investorPayment.amount / 1000000, 10);
+    const amount = Math.min(investorPayment.xem().amount, 10);
     return TransferTransaction.createWithMosaics(
         TimeWindow.createWithDeadline(),
         investorPayment.signer!.address,

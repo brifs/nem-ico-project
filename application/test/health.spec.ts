@@ -1,8 +1,12 @@
-import {expect} from "chai";
+import {Observable} from "rxjs";
+import {expect} from 'chai';
 
-describe("health test", () => {
+async function foo() {
+  return await Observable.of(1).toPromise();
+}
 
-    it("should be always true", () => {
-        expect(true).to.be.true;
-    });
+describe(":D", () => {
+  it("should be fun", async () => {
+    expect(await foo()).to.be.equal(1);
+  })
 });
