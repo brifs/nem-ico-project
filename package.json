@@ -9,7 +9,7 @@
     "test:payoutsystem": "mocha --ui bdd --recursive ./dist/payoutsystem/test",
     "test:application": "npm run pretest && NODE_ENV=test mocha --ui bdd --recursive ./dist/application/test",
     "test": "npm run test:payoutsystem && npm run test:application",
-    "application": "node ./dist/application/src/index.js",
+    "application": "node ./dist/application/src/server.js",
     "payoutsystem": "node ./dist/payoutsystem/src/index.js",
     "test:cov": "nyc --reporter=lcov --reporter=text-lcov npm run test && nyc report --reporter=lcov"
   },
